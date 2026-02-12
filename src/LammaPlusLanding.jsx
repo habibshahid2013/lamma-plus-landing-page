@@ -3,6 +3,9 @@ import Navbar from "./components/Navbar";
 import WaitlistForm from "./components/WaitlistForm";
 import Counter from "./components/Counter";
 import PlatformPreview from "./components/PlatformPreview";
+import AnimatedSection from "./components/AnimatedSection";
+import SearchMockup from "./components/SearchMockup";
+import ProfileMockup from "./components/ProfileMockup";
 
 /* ════════════════════════════════════════
    MAIN LANDING PAGE
@@ -306,123 +309,606 @@ export default function LammaPlusLanding() {
       </section>
 
       {/* ══════════════════════════════════
-          3 · FEATURES
+          2.5 · HOW IT WORKS
           ══════════════════════════════════ */}
-      <section id="features" style={{ padding: "100px 0" }}>
+      <section style={{ padding: "80px 0 20px", background: C.warmWhite }}>
         <div className="sec">
-          <div style={{ textAlign: "center", marginBottom: "52px" }}>
-            <div
-              style={{
-                color: C.terracotta,
-                fontSize: "11px",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: "2.5px",
-                marginBottom: "12px",
-              }}
-            >
-              What We're Building
+          <AnimatedSection>
+            <div style={{ textAlign: "center", marginBottom: "48px" }}>
+              <div
+                style={{
+                  color: C.terracotta,
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "2.5px",
+                  marginBottom: "12px",
+                }}
+              >
+                How It Works
+              </div>
+              <h2
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(28px, 3.2vw, 40px)",
+                  fontWeight: 700,
+                  color: C.teal,
+                }}
+              >
+                From question to{" "}
+                <span style={{ fontStyle: "italic", color: C.terracotta }}>
+                  connection
+                </span>{" "}
+                — in seconds
+              </h2>
             </div>
-            <h2
+          </AnimatedSection>
+
+          <div
+            className="how-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "24px",
+            }}
+          >
+            {[
+              {
+                step: "01",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={C.gold} strokeWidth="2" strokeLinecap="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                ),
+                title: "Search",
+                desc: "Type a topic, name, or question. Our AI-powered hybrid search understands what you mean — not just what you typed.",
+              },
+              {
+                step: "02",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={C.gold} strokeWidth="2" strokeLinecap="round">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                ),
+                title: "Discover",
+                desc: "Explore rich profiles with videos, podcasts, books, and courses — all unified from 14 platforms into one view.",
+              },
+              {
+                step: "03",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={C.gold} strokeWidth="2" strokeLinecap="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                  </svg>
+                ),
+                title: "Connect",
+                desc: "Follow your favorite scholars, compare creators side-by-side, and build your personal learning collection.",
+              },
+            ].map((s, i) => (
+              <AnimatedSection key={i} delay={i * 0.15}>
+                <div
+                  style={{
+                    textAlign: "center",
+                    padding: "32px 24px",
+                    background: C.warmWhite,
+                    borderRadius: "16px",
+                    border: `1px solid ${C.border}`,
+                    position: "relative",
+                    transition: "all 0.3s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                    e.currentTarget.style.boxShadow = "0 10px 28px rgba(27,60,60,0.07)";
+                    e.currentTarget.style.borderColor = C.gold + "40";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                    e.currentTarget.style.borderColor = C.border;
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 56,
+                      height: 56,
+                      borderRadius: "50%",
+                      background: `${C.teal}0C`,
+                      border: `1px solid ${C.teal}18`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 16px",
+                    }}
+                  >
+                    {s.icon}
+                  </div>
+                  <div
+                    style={{
+                      color: C.gold,
+                      fontSize: "10px",
+                      fontWeight: 700,
+                      letterSpacing: "2px",
+                      marginBottom: "6px",
+                    }}
+                  >
+                    STEP {s.step}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "'Playfair Display', Georgia, serif",
+                      fontSize: "20px",
+                      color: C.teal,
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: C.textMid,
+                      fontSize: "13px",
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    {s.desc}
+                  </p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════
+          3 · FEATURE SHOWCASE: DISCOVERY
+          ══════════════════════════════════ */}
+      <section id="features" style={{ padding: "80px 0" }}>
+        <div className="sec">
+          <div
+            className="showcase-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "56px",
+              alignItems: "center",
+            }}
+          >
+            {/* Copy */}
+            <AnimatedSection>
+              <div>
+                <div
+                  style={{
+                    color: C.terracotta,
+                    fontSize: "11px",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "2.5px",
+                    marginBottom: "12px",
+                  }}
+                >
+                  Intelligent Discovery
+                </div>
+                <h2
+                  style={{
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: "clamp(26px, 3vw, 38px)",
+                    fontWeight: 700,
+                    lineHeight: 1.15,
+                    color: C.teal,
+                    marginBottom: "18px",
+                  }}
+                >
+                  Find the right voice —{" "}
+                  <span style={{ fontStyle: "italic", color: C.terracotta }}>
+                    in seconds
+                  </span>
+                </h2>
+                <p
+                  style={{
+                    color: C.textMid,
+                    fontSize: "15px",
+                    lineHeight: 1.75,
+                    marginBottom: "24px",
+                  }}
+                >
+                  Our hybrid search combines AI-powered semantic understanding
+                  with traditional filters. Search by topic, language, region,
+                  or tradition — and discover scholars who match exactly what
+                  you're looking for.
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "12px",
+                  }}
+                >
+                  {[
+                    {
+                      icon: "✦",
+                      text: "Semantic AI finds creators by meaning, not just keywords",
+                    },
+                    {
+                      icon: "✦",
+                      text: "Filter by topic, language, region, tradition, platform & content type",
+                    },
+                    {
+                      icon: "✦",
+                      text: "Real-time suggestions and search history as you type",
+                    },
+                  ].map((b) => (
+                    <div
+                      key={b.text}
+                      style={{
+                        display: "flex",
+                        gap: "10px",
+                        alignItems: "flex-start",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: C.gold,
+                          fontSize: "12px",
+                          marginTop: "2px",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {b.icon}
+                      </span>
+                      <span
+                        style={{
+                          color: C.textMid,
+                          fontSize: "14px",
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {b.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Visual */}
+            <AnimatedSection delay={0.2}>
+              <div style={{ animation: "softFloat 8s ease-in-out infinite" }}>
+                <SearchMockup />
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════
+          3.5 · FEATURE SHOWCASE: PROFILES
+          ══════════════════════════════════ */}
+      <section
+        style={{
+          padding: "80px 0",
+          background: `linear-gradient(168deg, ${C.cream} 0%, ${C.warmWhite} 100%)`,
+        }}
+      >
+        <div className="sec">
+          <div
+            className="showcase-grid showcase-grid-reverse"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "56px",
+              alignItems: "center",
+            }}
+          >
+            {/* Visual (left on desktop) */}
+            <AnimatedSection>
+              <div style={{ animation: "softFloat 9s ease-in-out infinite 0.5s" }}>
+                <ProfileMockup />
+              </div>
+            </AnimatedSection>
+
+            {/* Copy (right on desktop) */}
+            <AnimatedSection delay={0.2}>
+              <div>
+                <div
+                  style={{
+                    color: C.terracotta,
+                    fontSize: "11px",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "2.5px",
+                    marginBottom: "12px",
+                  }}
+                >
+                  Rich Creator Profiles
+                </div>
+                <h2
+                  style={{
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: "clamp(26px, 3vw, 38px)",
+                    fontWeight: 700,
+                    lineHeight: 1.15,
+                    color: C.teal,
+                    marginBottom: "18px",
+                  }}
+                >
+                  Every creator,{" "}
+                  <span style={{ fontStyle: "italic", color: C.terracotta }}>
+                    fully connected
+                  </span>
+                </h2>
+                <p
+                  style={{
+                    color: C.textMid,
+                    fontSize: "15px",
+                    lineHeight: 1.75,
+                    marginBottom: "24px",
+                  }}
+                >
+                  One profile per creator — automatically enriched with content
+                  from across the internet. Videos, podcasts, books, courses,
+                  and social media presence — unified with AI-generated summaries
+                  and quality scores.
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "12px",
+                  }}
+                >
+                  {[
+                    {
+                      icon: "✦",
+                      text: "Content from 14 platforms, unified in one profile",
+                    },
+                    {
+                      icon: "✦",
+                      text: "AI-generated summaries and completeness scoring",
+                    },
+                    {
+                      icon: "✦",
+                      text: "Videos, podcasts, books, courses — all organized by type",
+                    },
+                    {
+                      icon: "✦",
+                      text: "Follow, share, and compare creators side-by-side",
+                    },
+                  ].map((b) => (
+                    <div
+                      key={b.text}
+                      style={{
+                        display: "flex",
+                        gap: "10px",
+                        alignItems: "flex-start",
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: C.gold,
+                          fontSize: "12px",
+                          marginTop: "2px",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {b.icon}
+                      </span>
+                      <span
+                        style={{
+                          color: C.textMid,
+                          fontSize: "14px",
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {b.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════
+          3.75 · PLATFORM INTEGRATION STRIP
+          ══════════════════════════════════ */}
+      <section style={{ padding: "60px 0", background: C.warmWhite }}>
+        <div className="sec">
+          <AnimatedSection>
+            <div style={{ textAlign: "center", marginBottom: "32px" }}>
+              <h2
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(22px, 2.5vw, 32px)",
+                  fontWeight: 700,
+                  color: C.teal,
+                  marginBottom: "8px",
+                }}
+              >
+                14 platforms.{" "}
+                <span style={{ fontStyle: "italic", color: C.terracotta }}>
+                  One unified view.
+                </span>
+              </h2>
+              <p
+                style={{
+                  color: C.textMid,
+                  fontSize: "14px",
+                  maxWidth: "480px",
+                  margin: "0 auto",
+                }}
+              >
+                Every creator's presence across the internet — connected and
+                organized in a single profile.
+              </p>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.15}>
+            <div
+              className="platform-strip"
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "clamp(28px, 3.2vw, 40px)",
-                fontWeight: 700,
-                color: C.teal,
+                display: "flex",
+                gap: "8px",
+                justifyContent: "center",
+                flexWrap: "wrap",
               }}
             >
-              One platform. Every voice.{" "}
-              <span style={{ fontStyle: "italic", color: C.terracotta }}>
-                Every tradition.
-              </span>
-            </h2>
-          </div>
+              {[
+                { name: "YouTube", color: "#CC0000" },
+                { name: "TikTok", color: "#25F4EE" },
+                { name: "Instagram", color: "#C13584" },
+                { name: "Spotify", color: "#1DB954" },
+                { name: "Apple Podcasts", color: "#9933CC" },
+                { name: "Google Books", color: "#4285F4" },
+                { name: "Facebook", color: "#1877F2" },
+                { name: "X / Twitter", color: C.text },
+                { name: "LinkedIn", color: "#0A66C2" },
+                { name: "Threads", color: C.text },
+                { name: "Twitch", color: "#9146FF" },
+                { name: "Patreon", color: "#FF424D" },
+                { name: "Apple Music", color: "#FC3C44" },
+                { name: "Websites", color: C.teal },
+              ].map((p) => (
+                <span
+                  key={p.name}
+                  style={{
+                    padding: "7px 16px",
+                    borderRadius: "20px",
+                    background: `${p.color}0C`,
+                    border: `1px solid ${p.color}22`,
+                    color: p.color,
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    transition: "all 0.3s",
+                    cursor: "default",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = `${p.color}18`;
+                    e.currentTarget.style.borderColor = `${p.color}40`;
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = `${p.color}0C`;
+                    e.currentTarget.style.borderColor = `${p.color}22`;
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
+                >
+                  {p.name}
+                </span>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
 
+      {/* ══════════════════════════════════
+          3.9 · MORE FEATURES (condensed)
+          ══════════════════════════════════ */}
+      <section style={{ padding: "60px 0 80px" }}>
+        <div className="sec">
+          <AnimatedSection>
+            <div style={{ textAlign: "center", marginBottom: "36px" }}>
+              <h2
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(24px, 2.8vw, 34px)",
+                  fontWeight: 700,
+                  color: C.teal,
+                }}
+              >
+                And so much more
+              </h2>
+            </div>
+          </AnimatedSection>
           <div
             className="features-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "16px",
+              gap: "14px",
             }}
           >
             {[
               {
-                icon: "🔍",
-                title: "Intelligent Discovery",
-                desc: "Search scholars by topic, language, region, tradition, or platform. Find voices from every corner of the ummah.",
-              },
-              {
-                icon: "📊",
-                title: "Unified Profiles",
-                desc: "One profile per creator — pulling from YouTube, TikTok, podcasts, books, and Wikipedia. Automatically enriched.",
-              },
-              {
                 icon: "🌍",
                 title: "The Full Ummah",
-                desc: "From West Africa to Southeast Asia, converts to lifelong scholars, emerging voices to established names. Everyone represented.",
+                desc: "Every tradition, region, and generation — from West Africa to Southeast Asia, emerging voices to established names.",
               },
               {
                 icon: "🎯",
                 title: "Quality Signals",
-                desc: "AI-powered completeness scoring surfaces the most active and well-documented creators — hidden gems don't stay hidden.",
-              },
-              {
-                icon: "📱",
-                title: "Every Platform",
-                desc: "YouTube, TikTok, Instagram, Spotify, Apple Podcasts, Google Books, academic publications — all connected in one place.",
+                desc: "AI-powered completeness scoring surfaces the most active creators — hidden gems don't stay hidden.",
               },
               {
                 icon: "🤲",
                 title: "Community-Built",
-                desc: "Nominate scholars. Claim your profile. Help build the most comprehensive index of Islamic knowledge creators ever assembled.",
+                desc: "Nominate scholars. Claim your profile. Help build the most comprehensive index of Islamic knowledge creators.",
+              },
+              {
+                icon: "⚖️",
+                title: "Compare Creators",
+                desc: "Side-by-side comparison of scholars — regions, languages, platforms, and content — to find your perfect match.",
+              },
+              {
+                icon: "🌙",
+                title: "Personalized Experience",
+                desc: "Tailored onboarding by region and interests. Dark mode. Six languages including Arabic and Urdu with RTL support.",
+              },
+              {
+                icon: "🕌",
+                title: "New Muslim Guide",
+                desc: "Curated onboarding for new Muslims — step-by-step guidance to find teachers for prayer, Quran, and community.",
               },
             ].map((f, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: "28px",
-                  background: C.warmWhite,
-                  borderRadius: "14px",
-                  border: `1px solid ${C.border}`,
-                  transition: "all 0.3s",
-                  cursor: "default",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 10px 28px rgba(27,60,60,0.07)";
-                  e.currentTarget.style.borderColor = C.gold + "50";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "none";
-                  e.currentTarget.style.borderColor = C.border;
-                }}
-              >
-                <div style={{ fontSize: "28px", marginBottom: "12px" }}>
-                  {f.icon}
+              <AnimatedSection key={i} delay={i * 0.08}>
+                <div
+                  style={{
+                    padding: "24px",
+                    background: C.warmWhite,
+                    borderRadius: "14px",
+                    border: `1px solid ${C.border}`,
+                    transition: "all 0.3s",
+                    cursor: "default",
+                    height: "100%",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 10px 28px rgba(27,60,60,0.07)";
+                    e.currentTarget.style.borderColor = C.gold + "50";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                    e.currentTarget.style.borderColor = C.border;
+                  }}
+                >
+                  <div style={{ fontSize: "24px", marginBottom: "10px" }}>
+                    {f.icon}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "'Playfair Display', Georgia, serif",
+                      fontSize: "17px",
+                      color: C.teal,
+                      marginBottom: "6px",
+                    }}
+                  >
+                    {f.title}
+                  </h3>
+                  <p
+                    style={{
+                      color: C.textMid,
+                      fontSize: "13px",
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {f.desc}
+                  </p>
                 </div>
-                <h3
-                  style={{
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: "18px",
-                    color: C.teal,
-                    marginBottom: "7px",
-                  }}
-                >
-                  {f.title}
-                </h3>
-                <p
-                  style={{
-                    color: C.textMid,
-                    fontSize: "13px",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  {f.desc}
-                </p>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -575,7 +1061,7 @@ export default function LammaPlusLanding() {
                       marginTop: "3px",
                     }}
                   >
-                    Founder & Creator
+                    Founder & CTO
                   </div>
                 </div>
               </div>

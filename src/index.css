@@ -93,6 +93,15 @@ body {
 }
 
 /* ═══════════════════════════════════════════
+   Responsive — Tablet (≤ 1024px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .showcase-grid {
+    gap: 36px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
    Responsive — Mobile (≤ 768px)
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -122,5 +131,31 @@ body {
   .footer-row {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* New sections */
+  .how-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .showcase-grid-reverse {
+    direction: ltr;
+  }
+  .showcase-grid-reverse > :first-child {
+    order: 2;
+  }
+  .showcase-grid-reverse > :last-child {
+    order: 1;
+  }
+  .platform-strip {
+    gap: 6px !important;
+  }
+  .platform-strip span {
+    font-size: 11px !important;
+    padding: 5px 12px !important;
   }
 }
