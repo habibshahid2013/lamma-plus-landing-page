@@ -3,24 +3,15 @@ import C from "../constants/colors";
 
 export default function SplashPage({ onComplete }) {
   const [exiting, setExiting] = useState(false);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading progress
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setExiting(true);
-          setTimeout(onComplete, 800); // Wait for exit animation to finish
-          return 100;
-        }
-        // Random increment for realistic feel
-        return Math.min(prev + Math.random() * 8 + 2, 100); 
-      });
-    }, 150);
+    // Simpler timer-based loading
+    const timer = setTimeout(() => {
+      setExiting(true);
+      setTimeout(onComplete, 800); // Wait for exit animation
+    }, 2500);
 
-    return () => clearInterval(interval);
+    return () => clearTimeout(timer);
   }, [onComplete]);
 
   return (
@@ -74,10 +65,9 @@ export default function SplashPage({ onComplete }) {
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
-          gap: "32px",
-          transform: exiting ? "translateY(-20px)" : "translateY(0)",
+          justifyContent: "center",
+          transform: exiting ? "scale(0.95)" : "scale(1)",
           transition: "transform 0.8s ease-in-out",
         }}
       >
@@ -85,48 +75,11 @@ export default function SplashPage({ onComplete }) {
           src="/lamma-logo-nav.png"
           alt="Lamma+"
           style={{
-            height: "80px", // Larger for splash
+            height: "80px",
             width: "auto",
-            animation: "pulse 3s ease-in-out infinite",
+            animation: "breathe 3s ease-in-out infinite",
           }}
         />
-
-        {/* Loading Bar Container */}
-        <div
-          style={{
-            width: "180px",
-            height: "3px",
-            background: `${C.teal}10`, // lighter track
-            borderRadius: "4px",
-            overflow: "hidden",
-            marginTop: "8px",
-          }}
-        >
-          <div
-            style={{
-              height: "100%",
-              width: `${progress}%`,
-              background: `linear-gradient(90deg, ${C.gold}, ${C.goldBright})`,
-              borderRadius: "4px",
-              transition: "width 0.2s ease-out",
-            }}
-          />
-        </div>
-        
-        {/* Loading Text */}
-        <div 
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: "11px",
-            color: C.teal,
-            opacity: 0.5,
-            letterSpacing: "1.5px",
-            textTransform: "uppercase",
-            fontWeight: 600,
-          }}
-        >
-         Loading Experience
-        </div>
       </div>
 
       <style>
@@ -135,9 +88,9 @@ export default function SplashPage({ onComplete }) {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
           }
-          @keyframes pulse {
-            0%, 100% { transform: scale(1); filter: brightness(100%); }
-            50% { transform: scale(1.03); filter: brightness(110%); }
+          @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.85; filter: drop-shadow(0 0 0 rgba(212, 168, 50, 0)); }
+            50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 15px rgba(212, 168, 50, 0.3)); }
           }
         `}
       </style>
