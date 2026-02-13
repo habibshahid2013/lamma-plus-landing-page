@@ -1,3 +1,4 @@
+import { useState } from "react";
 import C from "./constants/colors";
 import Navbar from "./components/Navbar";
 import WaitlistForm from "./components/WaitlistForm";
@@ -6,12 +7,15 @@ import PlatformPreview from "./components/PlatformPreview";
 import AnimatedSection from "./components/AnimatedSection";
 import SearchMockup from "./components/SearchMockup";
 import ProfileMockup from "./components/ProfileMockup";
+import SplashPage from "./components/SplashPage";
 
 /* ════════════════════════════════════════
    MAIN LANDING PAGE
    Assembles all 9 sections from the brief.
    ════════════════════════════════════════ */
 export default function LammaPlusLanding() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <div
       style={{
@@ -22,6 +26,8 @@ export default function LammaPlusLanding() {
         overflowX: "hidden",
       }}
     >
+      {showSplash && <SplashPage onComplete={() => setShowSplash(false)} />}
+
       {/* ── NAV ── */}
       <Navbar />
 
