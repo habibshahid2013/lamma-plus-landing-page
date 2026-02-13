@@ -30,7 +30,14 @@ export default function Navbar() {
       }}
     >
       {/* Logo — official brand PNG */}
-      <a href="#" style={{ display: "flex", alignItems: "center" }}>
+      <a 
+        href="/" 
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        style={{ display: "flex", alignItems: "center" }}
+      >
         <img
           src="/lamma-logo-nav.png"
           alt="LAMMA+"

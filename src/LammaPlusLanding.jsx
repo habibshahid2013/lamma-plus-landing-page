@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import C from "./constants/colors";
 import Navbar from "./components/Navbar";
 import WaitlistForm from "./components/WaitlistForm";
@@ -14,7 +14,21 @@ import SplashPage from "./components/SplashPage";
    Assembles all 9 sections from the brief.
    ════════════════════════════════════════ */
 export default function LammaPlusLanding() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
+
+  useEffect(() => {
+    // Check if user has already seen the splash in this session
+    const hasSeen = sessionStorage.getItem("lamma_splash_seen");
+    if (!hasSeen) {
+      setShowSplash(true);
+    }
+  }, []);
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+    sessionStorage.setItem("lamma_splash_seen", "true");
+  };
+
 
   return (
     <div
@@ -26,7 +40,7 @@ export default function LammaPlusLanding() {
         overflowX: "hidden",
       }}
     >
-      {showSplash && <SplashPage onComplete={() => setShowSplash(false)} />}
+      {showSplash && <SplashPage onComplete={handleSplashComplete} />}
 
       {/* ── NAV ── */}
       <Navbar />
