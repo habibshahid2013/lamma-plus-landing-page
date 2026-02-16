@@ -406,7 +406,7 @@ export default function LammaPlusLanding() {
                 fontSize: "16px", lineHeight: 1.75, color: C.textMid,
                 maxWidth: "440px", marginBottom: "30px",
               }}>
-                The first platform to index Islamic scholars, educators, and creators across
+                The first platform to index Islamic scholars, educators, and influencers across
                 YouTube, TikTok, podcasts, books, and beyond — making the richness of Islamic
                 knowledge accessible to everyone.
               </p>
@@ -418,7 +418,7 @@ export default function LammaPlusLanding() {
                 paddingTop: "24px", borderTop: `1px solid ${C.border}`,
               }}>
                 {[
-                  { n: 581, s: "+", l: "Creators Indexed", c: C.teal },
+                  { n: 581, s: "+", l: "Influencers Indexed", c: C.teal },
                   { n: 12, s: "+", l: "Platforms Tracked", c: C.terracotta },
                   { n: 40, s: "+", l: "Countries", c: C.burgundy },
                 ].map((s, i) => (
@@ -478,7 +478,7 @@ export default function LammaPlusLanding() {
           <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {[
               { n: 2, s: "B+", l: "Muslims Worldwide" },
-              { n: 1000, s: "s", l: "Of Creators Across Platforms" },
+              { n: 1000, s: "s", l: "Of Influencers Across Platforms" },
               { n: 0, s: "", l: "Unified Discovery Tools", label: "Zero" },
             ].map((s, i) => (
               <div key={i} style={{
@@ -522,11 +522,11 @@ export default function LammaPlusLanding() {
           }}>
             {[
               { icon: "🔍", title: "Intelligent Discovery", desc: "Search scholars by topic, language, region, tradition, or platform. Find voices from every corner of the ummah." },
-              { icon: "📊", title: "Unified Profiles", desc: "One profile per creator — pulling from YouTube, TikTok, podcasts, books, and Wikipedia. Automatically enriched." },
+              { icon: "📊", title: "Unified Profiles", desc: "One profile per influencer — pulling from YouTube, TikTok, podcasts, books, and Wikipedia. Automatically enriched." },
               { icon: "🌍", title: "The Full Ummah", desc: "From West Africa to Southeast Asia, converts to lifelong scholars, emerging voices to established names. Everyone represented." },
-              { icon: "🎯", title: "Quality Signals", desc: "AI-powered completeness scoring surfaces the most active and well-documented creators — hidden gems don't stay hidden." },
+              { icon: "🎯", title: "Quality Signals", desc: "AI-powered completeness scoring surfaces the most active and well-documented influencers — hidden gems don't stay hidden." },
               { icon: "📱", title: "Every Platform", desc: "YouTube, TikTok, Instagram, Spotify, Apple Podcasts, Google Books, academic publications — all connected in one place." },
-              { icon: "🤲", title: "Community-Built", desc: "Nominate scholars. Claim your profile. Help build the most comprehensive index of Islamic knowledge creators ever assembled." },
+              { icon: "🤲", title: "Community-Built", desc: "Nominate scholars. Claim your profile. Help build the most comprehensive index of Islamic knowledge influencers ever assembled." },
             ].map((f, i) => (
               <div key={i} style={{
                 padding: "28px", background: C.warmWhite,
@@ -574,11 +574,11 @@ export default function LammaPlusLanding() {
           </h2>
           <p style={{ color: C.textMid, fontSize: "15px", lineHeight: 1.75, marginBottom: "28px" }}>
             From West African Sufi traditions to Southeast Asian scholarship, from pioneering women
-            educators to emerging young creators, from converts sharing their journey to lifelong scholars —
+            educators to emerging young influencers, from converts sharing their journey to lifelong scholars —
             Lamma+ is built to represent the full spectrum of Islamic thought and experience.
           </p>
           <div style={{ display: "flex", gap: "8px", justifyContent: "center", flexWrap: "wrap" }}>
-            {["Scholars", "Educators", "Authors", "Speakers", "Podcasters", "Content Creators", "Activists", "Artists", "Converts", "Youth Voices"].map((t) => (
+            {["Scholars", "Educators", "Authors", "Speakers", "Podcasters", "Influencers", "Activists", "Artists", "Converts", "Youth Voices"].map((t) => (
               <span key={t} style={{
                 padding: "5px 14px", borderRadius: "18px",
                 background: C.warmWhite, border: `1px solid ${C.teal}14`,
@@ -648,7 +648,7 @@ export default function LammaPlusLanding() {
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 {[
                   "As a software engineer, artist, and community organizer in Minneapolis, I've always lived where creativity meets technology. Through my work as a Cedar Commission Fellow and Minnesota State Arts Board grant recipient, I've witnessed how powerful it is when communities can discover and amplify their own voices.",
-                  "When I looked for a way to find the scholars, educators, and creators shaping how millions understand Islam — I found nothing. No directory. No index. No unified platform to discover the incredible breadth of thought shared daily across YouTube, TikTok, podcasts, and books.",
+                  "When I looked for a way to find the scholars, educators, and influencers shaping how millions understand Islam — I found nothing. No directory. No index. No unified platform to discover the incredible breadth of thought shared daily across YouTube, TikTok, podcasts, and books.",
                   "So I built one. Lamma+ is the realization of a simple belief: that the voices shaping Islamic knowledge deserve to be discovered, organized, and celebrated — and that the ummah deserves a platform that makes that effortless.",
                 ].map((p, i) => (
                   <p key={i} style={{ color: C.textMid, fontSize: "14px", lineHeight: 1.8 }}>{p}</p>
@@ -687,10 +687,10 @@ export default function LammaPlusLanding() {
 
           <div style={{ maxWidth: "560px", margin: "0 auto" }}>
             {[
-              { ph: "Now", t: "581+ creators indexed", d: "Profiles enriched with AI from 12+ platforms across 40+ countries", done: true },
-              { ph: "Next", t: "3,000 creator milestone", d: "Expanding globally — scholars, emerging voices, every tradition", done: false },
+              { ph: "Now", t: "581+ influencers indexed", d: "Profiles enriched with AI from 12+ platforms across 40+ countries", done: true },
+              { ph: "Next", t: "3,000 influencer milestone", d: "Expanding globally — scholars, emerging voices, every tradition", done: false },
               { ph: "Soon", t: "Public beta launch", d: "Open platform with search, filtering, and community features", done: false },
-              { ph: "Future", t: "Creator profiles & community", d: "Creators claim profiles. Community nominations and curation.", done: false },
+              { ph: "Future", t: "Influencer profiles & community", d: "Influencers claim profiles. Community nominations and curation.", done: false },
             ].map((r, i) => (
               <div key={i} style={{
                 display: "flex", gap: "20px", padding: "24px 0",

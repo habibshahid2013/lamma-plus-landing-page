@@ -50,7 +50,7 @@ export default function ProfileMockup() {
             fontFamily: "'DM Mono', monospace",
           }}
         >
-          lammaplus.app/creator/khalid-rashid
+          lammaplus.app/influencer/khalid-rashid
         </span>
       </div>
 

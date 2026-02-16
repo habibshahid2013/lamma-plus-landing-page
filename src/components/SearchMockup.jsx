@@ -159,7 +159,7 @@ export default function SearchMockup() {
             gap: "6px",
           }}
         >
-          <span style={{ fontWeight: 700, color: C.teal }}>23</span> creators
+          <span style={{ fontWeight: 700, color: C.teal }}>23</span> influencers
           found
           <span
             style={{

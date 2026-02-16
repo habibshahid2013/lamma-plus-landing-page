@@ -169,7 +169,7 @@ export default function LammaPlusLanding() {
                 }}
               >
                 The first platform to index Islamic scholars, educators, and
-                creators across YouTube, TikTok, podcasts, books, and beyond —
+                influencers across YouTube, TikTok, podcasts, books, and beyond —
                 making the richness of Islamic knowledge accessible to everyone.
               </p>
 
@@ -187,7 +187,7 @@ export default function LammaPlusLanding() {
                 }}
               >
                 {[
-                  { n: 581, s: "+", l: "Creators Indexed", c: C.teal },
+                  { n: 581, s: "+", l: "Influencers Indexed", c: C.teal },
                   { n: 12, s: "+", l: "Platforms Tracked", c: C.terracotta },
                   { n: 40, s: "+", l: "Countries", c: C.burgundy },
                 ].map((s, i) => (
@@ -292,7 +292,7 @@ export default function LammaPlusLanding() {
           >
             {[
               { n: 2, s: "B+", l: "Muslims Worldwide" },
-              { n: 1000, s: "s", l: "Of Creators Across Platforms" },
+              { n: 1000, s: "s", l: "Of Influencers Across Platforms" },
               { n: 0, s: "", l: "Unified Discovery Tools", label: "Zero" },
             ].map((s, i) => (
               <div
@@ -403,7 +403,7 @@ export default function LammaPlusLanding() {
                   </svg>
                 ),
                 title: "Connect",
-                desc: "Follow your favorite scholars, compare creators side-by-side, and build your personal learning collection.",
+                desc: "Follow your favorite scholars, compare influencers side-by-side, and build your personal learning collection.",
               },
             ].map((s, i) => (
               <AnimatedSection key={i} delay={i * 0.15}>
@@ -547,7 +547,7 @@ export default function LammaPlusLanding() {
                   {[
                     {
                       icon: "✦",
-                      text: "Semantic AI finds creators by meaning, not just keywords",
+                      text: "Semantic AI finds influencers by meaning, not just keywords",
                     },
                     {
                       icon: "✦",
@@ -640,7 +640,7 @@ export default function LammaPlusLanding() {
                     marginBottom: "12px",
                   }}
                 >
-                  Rich Creator Profiles
+                  Rich Influencer Profiles
                 </div>
                 <h2
                   style={{
@@ -652,7 +652,7 @@ export default function LammaPlusLanding() {
                     marginBottom: "18px",
                   }}
                 >
-                  Every creator,{" "}
+                  Every influencer,{" "}
                   <span style={{ fontStyle: "italic", color: C.terracotta }}>
                     fully connected
                   </span>
@@ -665,7 +665,7 @@ export default function LammaPlusLanding() {
                     marginBottom: "24px",
                   }}
                 >
-                  One profile per creator — automatically enriched with content
+                  One profile per influencer — automatically enriched with content
                   from across the internet. Videos, podcasts, books, courses,
                   and social media presence — unified with AI-generated summaries
                   and quality scores.
@@ -692,7 +692,7 @@ export default function LammaPlusLanding() {
                     },
                     {
                       icon: "✦",
-                      text: "Follow, share, and compare creators side-by-side",
+                      text: "Follow, share, and compare influencers side-by-side",
                     },
                   ].map((b) => (
                     <div
@@ -760,7 +760,7 @@ export default function LammaPlusLanding() {
                   margin: "0 auto",
                 }}
               >
-                Every creator's presence across the internet — connected and
+                Every influencer's presence across the internet — connected and
                 organized in a single profile.
               </p>
             </div>
@@ -859,16 +859,16 @@ export default function LammaPlusLanding() {
               {
                 icon: "🎯",
                 title: "Quality Signals",
-                desc: "AI-powered completeness scoring surfaces the most active creators — hidden gems don't stay hidden.",
+                desc: "AI-powered completeness scoring surfaces the most active influencers — hidden gems don't stay hidden.",
               },
               {
                 icon: "🤲",
                 title: "Community-Built",
-                desc: "Nominate scholars. Claim your profile. Help build the most comprehensive index of Islamic knowledge creators.",
+                desc: "Nominate scholars. Claim your profile. Help build the most comprehensive index of Islamic knowledge influencers.",
               },
               {
                 icon: "⚖️",
-                title: "Compare Creators",
+                title: "Compare Influencers",
                 desc: "Side-by-side comparison of scholars — regions, languages, platforms, and content — to find your perfect match.",
               },
               {
@@ -973,7 +973,7 @@ export default function LammaPlusLanding() {
             }}
           >
             From West African Sufi traditions to Southeast Asian scholarship,
-            from pioneering women educators to emerging young creators, from
+            from pioneering women educators to emerging young influencers, from
             converts sharing their journey to lifelong scholars — Lamma+ is
             built to represent the full spectrum of Islamic thought and
             experience.
@@ -992,7 +992,7 @@ export default function LammaPlusLanding() {
               "Authors",
               "Speakers",
               "Podcasters",
-              "Content Creators",
+              "Influencers",
               "Activists",
               "Artists",
               "Converts",
@@ -1127,7 +1127,7 @@ export default function LammaPlusLanding() {
               >
                 {[
                   "As a software engineer, artist, and community organizer in Minneapolis, I've always lived where creativity meets technology. Through my work as a Cedar Commission Fellow and Minnesota State Arts Board grant recipient, I've witnessed how powerful it is when communities can discover and amplify their own voices.",
-                  "When I looked for a way to find the scholars, educators, and creators shaping how millions understand Islam — I found nothing. No directory. No index. No unified platform to discover the incredible breadth of thought shared daily across YouTube, TikTok, podcasts, and books.",
+                  "When I looked for a way to find the scholars, educators, and influencers shaping how millions understand Islam — I found nothing. No directory. No index. No unified platform to discover the incredible breadth of thought shared daily across YouTube, TikTok, podcasts, and books.",
                   "So I built one. Lamma+ is the realization of a simple belief: that the voices shaping Islamic knowledge deserve to be discovered, organized, and celebrated — and that the ummah deserves a platform that makes that effortless.",
                 ].map((p, i) => (
                   <p
@@ -1294,13 +1294,13 @@ export default function LammaPlusLanding() {
             {[
               {
                 ph: "Now",
-                t: "581+ creators indexed",
+                t: "581+ influencers indexed",
                 d: "Profiles enriched with AI from 12+ platforms across 40+ countries",
                 done: true,
               },
               {
                 ph: "Next",
-                t: "3,000 creator milestone",
+                t: "3,000 influencer milestone",
                 d: "Expanding globally — scholars, emerging voices, every tradition",
                 done: false,
               },
@@ -1312,8 +1312,8 @@ export default function LammaPlusLanding() {
               },
               {
                 ph: "Future",
-                t: "Creator profiles & community",
-                d: "Creators claim profiles. Community nominations and curation.",
+                t: "Influencer profiles & community",
+                d: "Influencers claim profiles. Community nominations and curation.",
                 done: false,
               },
             ].map((r, i) => (
